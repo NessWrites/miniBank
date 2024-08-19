@@ -56,6 +56,8 @@ class CheckingAccount:
     def __init__(self, account_number, account_holder, overdraft_limit):
         super().__init__(account_number, account_holder)
         self.overdraft_limit = overdraft_limit
+
+#there is withdraw method in bank accout too.. Polymor
     def withdraw(self, amount):
         if amount<= self.check_balance() + self.overdraft_limit:
             self._BankAccount__balance -= amount
@@ -64,5 +66,9 @@ class CheckingAccount:
             print('Exceeded overdraft limit')
             
 
+"""Polymorphism:
+The withdraw method is overridden in CheckingAccount to accommodate the overdraft feature,
 
+ demonstrating polymorphism. Both SavingsAccount and CheckingAccount can be used interchangeably where BankAccount is expected.
+		"""
             
